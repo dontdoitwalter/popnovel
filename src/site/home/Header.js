@@ -34,7 +34,7 @@ class Navigation extends Component{
                                 <Button><Link to="/contact">Contact Us</Link></Button>
                             </NavItem>
                             <NavItem className="buttons">
-                                <Button onClick={()=> this.props.clickLogout()}><Link to="/home">Logout</Link></Button>
+                                <Button onClick={()=> this.props.clickLogout()}><Link to="/">Logout</Link></Button>
                             </NavItem>
                         </Nav>
                     </Collapse>
@@ -42,7 +42,7 @@ class Navigation extends Component{
             </div>
             <div>
                 <Switch>
-                    <Route exact path="/home"><Home/></Route>
+                    {/* <Route exact path="/home"><Home setToken={this.props.setToken}/></Route>  */}
                     <Route exact path="/contact"><Contact /></Route>
                 </Switch>
             </div>
@@ -50,5 +50,5 @@ class Navigation extends Component{
         )
     }
 }
-
+// do we need more props line 45??
 export default Navigation;

@@ -43,9 +43,9 @@ class Profile extends Component{
         }).then(
             (response)=>response.json()
             ).then((data)=>{
-            this.setState({user:data[0]})
+            this.setState({user:data})
             console.log(this.setState)
-            console.log(data[0])
+            console.log(data)
         })
     }
     handleUpdate = () =>{

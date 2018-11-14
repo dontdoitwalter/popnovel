@@ -33,7 +33,7 @@ handleChange = (event) =>{
     });
 }
 handleSubmit = (event) =>{
-    fetch(`${APIURL}/user/signup`, {
+    fetch("http://localhost:3000/user/signup", {
         method:'POST',
         body:JSON.stringify({user:this.state}),
         headers:new Headers({
@@ -42,6 +42,7 @@ handleSubmit = (event) =>{
     }).then(
         (response)=>response.json()
     ).then((data)=>{
+        
         this.props.setToken(data)
     })
     event.preventDefault()
@@ -52,7 +53,7 @@ render(){
                 <h3>Sign Up!</h3>
                     <h6>
                         Now that you have checked out the site and want to sign up, read over the following content
-                        and click the "I Accpet!" button to create an account.
+                        and click the "I Accept!" button to create an account.
                     </h6>
                 <h3>Open Source</h3>
                     <h6>

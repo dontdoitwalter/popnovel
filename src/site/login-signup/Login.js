@@ -12,7 +12,7 @@ class Login extends Component {
     }
 
     componentWillMount(){
-        this.props.test();
+        console.log("yo")
     }
 
     handleChange = (event) =>{
@@ -30,6 +30,7 @@ class Login extends Component {
         }).then(
             (response)=>response.json()
         ).then((data)=>{
+            console.log("data: ", data);
             this.props.setToken(data)
         })
         event.preventDefault()

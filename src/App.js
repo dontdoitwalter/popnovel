@@ -18,13 +18,15 @@ class App extends Component {
             test: 'test data'
         }
     }
+    
     componentWillMount(){
         const token = localStorage.getItem('token');
         if(token && !this.state.sessionToken){
             this.setState({sessionToken:token});
         }
     }
-    setSessionState = (data)=>{
+    setSessionState = (data) => {
+        console.log("set token: ", data)
         localStorage.setItem('token', data.sessionToken);
         localStorage.setItem('userid', data.user.id)
         console.log(data)
@@ -60,7 +62,7 @@ class App extends Component {
             return(
             <Switch>
                 <Route exact path='/'>
-                    <Home setToken={this.setSessionState} testMethod={this.testMethod.bind(this)}/>
+                    <Home setToken={this.setSessionState} />
                 </Route>
                 <Route exact path='/sample'>
                     <Sample setToken={this.setSessionState} />
@@ -73,7 +75,7 @@ class App extends Component {
         return(
             <Router>
                 <div>
-                    <Header clickLogout={this.logout} />
+                    <Header clickLogout={this.logout}  setToken={this.setSessionState}/>
                     {this.protectedViews()}
                     <Footer />
                 </div>
