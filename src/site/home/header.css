@@ -1,0 +1,11 @@
+#icon{
+    height: 1.5em;
+    width: 1.5em;
+}
+.navigator{
+    border-bottom:.15em solid black;
+    background:lightgray;
+}
+.buttons{
+    padding-left:.5em;
+}
