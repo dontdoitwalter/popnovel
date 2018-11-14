@@ -10,6 +10,11 @@ class Login extends Component {
             passwordhash:''
         };
     }
+
+    componentWillMount(){
+        this.props.test();
+    }
+
     handleChange = (event) =>{
         this.setState({
             [event.target.name]:event.target.value

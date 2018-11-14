@@ -14,7 +14,8 @@ class App extends Component {
     constructor(){
         super();
         this.state={
-            sessionToken:''
+            sessionToken:'',
+            test: 'test data'
         }
     }
     componentWillMount(){
@@ -35,6 +36,11 @@ class App extends Component {
         })
         localStorage.clear()
     }
+
+    testMethod() {
+        console.log("from app component")
+    }
+
     protectedViews = () =>{
         if(this.state.sessionToken === localStorage.getItem('token')){
             return(
@@ -54,7 +60,7 @@ class App extends Component {
             return(
             <Switch>
                 <Route exact path='/'>
-                    <Home setToken={this.setSessionState} />
+                    <Home setToken={this.setSessionState} testMethod={this.testMethod.bind(this)}/>
                 </Route>
                 <Route exact path='/sample'>
                     <Sample setToken={this.setSessionState} />

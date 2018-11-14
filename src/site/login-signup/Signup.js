@@ -17,6 +17,11 @@ class Signup extends Component{
         };
         this.toggle=this.toggle.bind(this);
 }
+
+componentWillMount(){
+    console.log("sign up props: ", this.props)
+}
+
 toggle(){
     this.setState({
         modal:!this.state.modal
@@ -28,11 +33,11 @@ handleChange = (event) =>{
     });
 }
 handleSubmit = (event) =>{
-    fetch(`${APIURL}/user/signup`,{
+    fetch(`${APIURL}/user/signup`, {
         method:'POST',
-        body: JSON.stringify({user:this.state}),
-        headers: new Headers({
-            'Content-type':'application/json'
+        body:JSON.stringify({user:this.state}),
+        headers:new Headers({
+            'Content-Type':'application/json'
         })
     }).then(
         (response)=>response.json()
@@ -68,7 +73,7 @@ render(){
                         </ul>
             <Button color="secondary" onClick={this.toggle}>I Accept!</Button>       
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <ModalHeader toggle={this.toggle}>Update Profile Info</ModalHeader>
+                <ModalHeader toggle={this.toggle}>Create Your Profile</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup>

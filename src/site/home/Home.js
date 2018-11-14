@@ -6,6 +6,7 @@ import Preview from '../home/Preview'
 import './home.css'
 
 const Auth = (props)=>{
+    console.log("auth props:", props)
     return(
         <div>
         <Container className="auth-container">
@@ -17,7 +18,7 @@ const Auth = (props)=>{
                     <div><Preview /></div>
                 </Col>
                 <Col className="homeRight">
-                    <div><Login setToken={props.setToken} /></div>
+                    <div><Login test={props.testMethod} setToken={props.setToken} /></div>
                 </Col>
             </Row>
         </Container>
