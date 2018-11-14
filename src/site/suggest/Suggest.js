@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Input, Button} from 'reactstrap'
+import APIURL from '../../helpers/environment';
 
 class Suggest extends Component{
     constructor (props){
@@ -21,7 +22,7 @@ class Suggest extends Component{
         });
     }
     makeSuggestion = (event) =>{
-        fetch(`http://localhost:3000/user/suggest`,{
+        fetch(`${APIURL}/user/suggest`,{
             method:'POST',
             body:JSON.stringify({submission:this.state}),
             headers: new Headers({

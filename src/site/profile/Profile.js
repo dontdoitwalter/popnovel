@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {FormGroup, Input, Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form} from 'reactstrap'
-import UserStory from './UserStoryInfo'
+import UserStory from './UserStoryInfo';
+import APIURL from '../../helpers/environment';
 
 class Profile extends Component{
     constructor(props){
@@ -33,7 +34,7 @@ class Profile extends Component{
         });
     }
     fetchProfile= () =>{
-        fetch(`http://localhost:3000/user/info/${localStorage.getItem('userid')}`,{
+        fetch(`${APIURL}/user/info/${localStorage.getItem('userid')}`,{
             method:'GET',
             headers:new Headers({
                 'Content-Type':'application/json',
@@ -48,7 +49,7 @@ class Profile extends Component{
         })
     }
     handleUpdate = () =>{
-        fetch(`http://localhost:3000/user/update/${localStorage.getItem('userid')}`,{
+        fetch(`${APIURL}/user/update/${localStorage.getItem('userid')}`,{
             method:'PUT',
             body:JSON.stringify({user:this.state}),
             headers:new Headers({
