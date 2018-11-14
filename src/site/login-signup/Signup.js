@@ -28,7 +28,7 @@ handleChange = (event) =>{
     });
 }
 handleSubmit = (event) =>{
-    fetch("${APIURL}/user/signup",{
+    fetch(`${APIURL}/user/signup`,{
         method:'POST',
         body: JSON.stringify({user:this.state}),
         headers: new Headers({
