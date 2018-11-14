@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
-import './app.css'
+import '../src/app.css'
 import Header from './site/home/Header'
 import Home from './site/home/Home'
 import Footer from './site/home/Footer'
