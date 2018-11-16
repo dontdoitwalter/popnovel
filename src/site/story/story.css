@@ -1,0 +1,17 @@
+#story-container{
+    background:#F55C5C;
+    border: .4em solid #567077;
+    border-radius: .4em;
+    box-shadow: 2  #f0f0f0;
+    padding:2em;
+}
+#story-background{
+    background:#550000;
+    padding:6em;
+}
+#story-divider{
+    border-right:2px solid black;
+}
+#storysubmit{
+    height:35em;
+}

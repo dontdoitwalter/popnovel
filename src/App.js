@@ -54,7 +54,7 @@ class App extends Component {
                         <Story sessionToken={this.state.sessionToken}/>
                     </Route>
                 <Route exact path='/suggest'>
-                    <Suggest setToken={this.setSessionState}/>
+                    <Suggest sessionToken={this.state.sessionToken}/>
                 </Route> 
                 </Switch>
             )

@@ -18,13 +18,17 @@ class Suggest extends Component{
     makeSuggestion = (event) =>{
         fetch(`${APIURL}/user/suggest`,{
             method:'POST',
-            body:JSON.stringify({suggest:this.state}),
+            body:JSON.stringify({submission:this.state}),
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization':this.props.token
+                'Authorization':this.props.sessionToken
             })
-        }).then((response)=>response.json())
-        event.preventDefault()
+        }).then(
+            (res)=>res.json())
+            .then(
+                (data)=>console.log(data)
+            )
+            alert("Thank you for your suggestion!")
     }
     render(){
         return(
