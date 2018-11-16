@@ -1,15 +1,17 @@
 .auth-container{
-    background:lightgrey;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 2em;
-    border: 5px solid #e5e5e5;
+    background:#F55C5C;
+    border: .4em solid #567077;
     border-radius: .4em;
-    box-shadow: 2  #f0f0f0
+    box-shadow: 2  #f0f0f0;
+    padding:2em;
 }
 .homeLeft{
     border-right:2px solid black;
 }
 .homeRight{
     border-left:2px solid black;
+}
+#background{
+    background:#550000;
+    padding:4em;
 }

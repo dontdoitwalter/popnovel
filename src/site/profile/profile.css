@@ -1,0 +1,20 @@
+.prof-container{
+    background:#F55C5C;
+    border: .4em solid #567077;
+    border-radius: .4em;
+    box-shadow: 2  #f0f0f0;
+    padding:6.25em;
+}
+#background{
+    background:#550000;
+    padding:4em;
+}
+.prof-left{
+    border-left:2px solid black;
+}
+#prof-button-one{
+margin-right:1em;
+}
+#prof-button-two{
+    margin-right:1em;
+}

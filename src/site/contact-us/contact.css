@@ -1,5 +1,18 @@
-#lemon{
-    margin-left:25%;
-    height:17.5em;
-    width:17.5em;
+#contact-container{
+    background:#F55C5C;
+    border: .4em solid #567077;
+    border-radius: .4em;
+    box-shadow: 2  #f0f0f0;
+    padding:2em;
+}
+#contact-background{
+    background:#550000;
+    padding:6em;
+}
+#contact-divider-left{
+    border-top:2px solid black;
+    border-left:2px solid black;
+}
+#top-divide{
+    margin-bottom:2em;
 }

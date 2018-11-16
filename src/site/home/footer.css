@@ -1,7 +1,5 @@
 footer{
-    border-top:.15em solid black;
-    background: lightgrey;
-}
-#footer{
-    margin:auto;
+    border-top:.4em solid black;
+    background-color: #567077;
+    height:100%;
 }

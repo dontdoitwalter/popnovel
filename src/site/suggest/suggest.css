@@ -1,0 +1,11 @@
+.suggest-container{
+    background:#F55C5C;
+    border: .4em solid #567077;
+    border-radius: .4em;
+    box-shadow: 2  #f0f0f0;
+    padding:2em;
+}
+#suggest-background{
+    background:#550000;
+    padding:18.25em;
+}

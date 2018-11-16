@@ -1,20 +1,14 @@
 import React, {Component} from 'react';
-import {Form, FormGroup, Input, Button} from 'reactstrap'
+import {Form, FormGroup, Input, Button, Container, Row, Col} from 'reactstrap'
 import APIURL from '../../helpers/environment';
+import './suggest.css'
 
 class Suggest extends Component{
     constructor (props){
         super(props)
         this.state={
             suggest:'',
-            modal:false
         };
-        this.toggle=this.toggle.bind(this);
-    }
-    toggle(){
-        this.setState({
-            modal:!this.state.modal
-        });
     }
     handleChange = (event) =>{
         this.setState({
@@ -24,7 +18,7 @@ class Suggest extends Component{
     makeSuggestion = (event) =>{
         fetch(`${APIURL}/user/suggest`,{
             method:'POST',
-            body:JSON.stringify({submission:this.state}),
+            body:JSON.stringify({suggest:this.state}),
             headers: new Headers({
                 'Content-Type':'application/json',
                 'Authorization':this.props.token
@@ -34,14 +28,20 @@ class Suggest extends Component{
     }
     render(){
         return(
-            <div>
-                <h3>If you would like to suggest either a future prompt or genre, enter is in the field below!</h3>
-                        <Form onSubmit={this.makeSuggestion}>
-                            <FormGroup>
-                                <Input id="suggest"type="textarea"name="suggest"placeholder="Suggest Away!!"onChange={this.handleChange}/>
-                            </FormGroup>
-                            <Button color="primary" type="submit">Submit Suggestion</Button>
-                        </Form>
+            <div id="suggest-background">
+                    <Container className="suggest-container">
+                        <Row>
+                            <Col>
+                            <h3>If you would like to suggest either a future prompt or genre, enter is in the field below!</h3>
+                                <Form onSubmit={this.makeSuggestion}>
+                                    <FormGroup>
+                                        <Input id="suggest"type="textarea"name="suggest"placeholder="Suggest Away!!"onChange={this.handleChange}/>
+                                    </FormGroup>
+                                    <Button id="suggest-button" type="submit">Submit Suggestion</Button>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </Container>
             </div>
         )
     }

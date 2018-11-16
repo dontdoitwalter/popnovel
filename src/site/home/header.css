@@ -3,9 +3,21 @@
     width: 1.5em;
 }
 .navigator{
-    border-bottom:.15em solid black;
-    background:lightgray;
+    border-bottom:.4em solid black;
+    background-color:#567077;
 }
 .buttons{
     padding-left:.5em;
+}
+#buttonone{
+     background-color:#F55C5C;
+     color:black;
+}
+#buttontwo{
+    background-color:#F55C5C;
+    color:black;
+}
+#buttonthree{
+    background-color:#F55C5C;
+    color:black;
 }

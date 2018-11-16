@@ -18,11 +18,9 @@ class Preview extends Component {
                     <h6>Hey we get it, committment is hard! Click on our logo to see what we are all about before you sign up!</h6>
                 </div>
                 <div>
-                    <Button>
                         <Link to="/sample">
                             <img src={Logo} alt="logo" id="logo"/>
                         </Link>
-                    </Button>
                 </div>
                 <div>
 

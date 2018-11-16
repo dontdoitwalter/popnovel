@@ -5,7 +5,8 @@ import './sample.css';
 
 const Sample = ()=>{
     return(
-        <Container>
+        <div id="sample-background">
+        <Container id="sample-container">
             <Row>
                 <Col>
                 This is there the sample story for the month will go.
@@ -24,10 +25,11 @@ const Sample = ()=>{
                     Whether you submit once or dozens of times, whether your submissions are 250 words or 1000. You submission
                     is part of a friggin book dude!
                 </p>
-                <Button><Link to="/home">Sign me up!</Link></Button>
+                <Link to="/home"><Button>Sign me up!</Button></Link>
                 </Col>
             </Row>
         </Container>
+        </div>
     )
 }
 export default Sample;

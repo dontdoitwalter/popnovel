@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {FormGroup, Input, Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form} from 'reactstrap'
-import UserStory from './UserStoryInfo';
 import APIURL from '../../helpers/environment';
+import './profile.css';
 
 class Profile extends Component{
     constructor(props){
@@ -25,7 +25,7 @@ class Profile extends Component{
             modal:!this.state.modal
         });
     }
-    componentWillMount(){
+    componentDidMount(){
         this.fetchProfile()
     }
     handleChange = (event) =>{
@@ -43,8 +43,8 @@ class Profile extends Component{
         }).then(
             (response)=>response.json()
             ).then((data)=>{
-            this.setState({user:data})
-            console.log(this.setState)
+            this.setState({user:data.user})
+            console.log(this.state)
             console.log(data)
         })
     }
@@ -61,17 +61,21 @@ class Profile extends Component{
         )
     }
 render(){
+    console.log(this.state.user)
     return(
-    <Container>
+        <div id="background">
+    <Container className="prof-container">
       <Row>
           <Col>
           <div>
             <h2>My Profile</h2>
+            <br></br>
                 <div>
+                    <b>Display Name:</b><br/>{this.state.user.displayname}<hr/>
+                    <b>Email Address:</b><br/>{this.state.user.email}<hr/>
                     <b>First Name:</b><br/>{this.state.user.firstname}<hr/>
                     <b>Last Name:</b><br/>{this.state.user.lastname}<hr/>
                     <b>Hometown:</b><br/>{this.state.user.hometown}<hr/>
-                    <b>About Me:</b><br/>{this.state.user.aboutme}<hr/>
                 </div>
         </div>
             <Button color="secondary" onClick={this.toggle}>Update Profile</Button>
@@ -105,13 +109,16 @@ render(){
                   </ModalFooter>
                 </Modal>          
           </Col>
-          <Col>
-            <UserStory/>
-            <Button><Link to="/story">Create!</Link></Button>
-            <Button><Link to='/suggest'>Suggest a Prompt!</Link></Button>
+          <Col className="prof-left">
+            <h2>About Me:</h2><br/>{this.state.user.aboutme}<hr/>
+            <Link to="/story"><Button id="prof-button-one">Create!</Button></Link>
+            <Link to='/suggest'><Button id="prof-button-two">Suggest a Prompt!</Button></Link>
+            <Button>Delete My Account</Button>
           </Col>
       </Row>
   </Container>
+  </div>
+    
     )
 }
 }
