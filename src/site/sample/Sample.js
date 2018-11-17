@@ -2,14 +2,15 @@ import React from 'react';
 import {Container, Row, Col, Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import './sample.css';
+import Results from './SampleResults'
 
-const Sample = ()=>{
+const Sample = (props)=>{
     return(
         <div id="sample-background">
         <Container id="sample-container">
             <Row>
                 <Col>
-                This is there the sample story for the month will go.
+                    <Results />
                 </Col>
                 <Col>
                 <h2>How it Works</h2>

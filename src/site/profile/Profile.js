@@ -60,6 +60,21 @@ class Profile extends Component{
             (response)=>response.json()
         )
     }
+    handleDelete = () =>{
+        fetch(`${APIURL}/user/delete/${localStorage.getItem('userid')}`,{
+            method:'DELETE',
+            headers: new Headers({
+                'Content-Type':'application/json',
+                'Authorization':this.props.token
+            })
+        })
+        .then(
+            localStorage.clear()
+        ).then(
+            this.forceUpdate()
+        )
+        
+    }
 render(){
     console.log(this.state.user)
     return(
@@ -113,12 +128,13 @@ render(){
             <h2>About Me:</h2><br/>{this.state.user.aboutme}<hr/>
             <Link to="/story"><Button id="prof-button-one">Create!</Button></Link>
             <Link to='/suggest'><Button id="prof-button-two">Suggest a Prompt!</Button></Link>
-            <Button>Delete My Account</Button>
+            <Form onSubmit={this.handleDelete}>
+                <Button type="submit">Delete My Account</Button>
+            </Form>
           </Col>
       </Row>
   </Container>
   </div>
-    
     )
 }
 }

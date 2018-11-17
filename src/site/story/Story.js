@@ -17,25 +17,30 @@ class Story extends Component{
             modal:!this.state.modal
         });
     }
-    componentDidMount(){
-        this.fetchStory()
-    }
-    fetchStory = () =>{
-        fetch(`${APIURL}/authuser/read`,{
-            method:'GET',
-            headers:new Headers({
-                'Content-Type':'application/json',
-                'Authorization':this.props.sessionToken
-            })
-        }).then(
-            (res)=>res.json()
-        ).then((story)=>{
-            this.setState({story:story})
-            console.log(story)
+    handleChange = (event) =>{
+        this.setState({
+            [event.target.name]:event.target.value
         })
     }
+    componentDidMount(){
+        // this.fetchStory()
+    }
+    // fetchStory = () =>{
+    //     fetch(`${APIURL}/authuser/read`,{
+    //         method:'GET',
+    //         headers:new Headers({
+    //             'Content-Type':'application/json',
+    //             'Authorization':this.props.sessionToken
+    //         })
+    //     }).then(
+    //         (res)=>res.json()
+    //     ).then((story)=>{
+    //         this.setState({story:story})
+    //         console.log(story)
+    //     })
+    // }
     submitStory = (event) => {
-        fetch(`${APIURL}/authuser/story`,{
+        fetch(`${APIURL}/user/story`,{
             method:'POST',
             body:JSON.stringify({storysubmit:this.state}),
             headers:new Headers({
@@ -60,7 +65,7 @@ class Story extends Component{
                     <Col>
                         <Form>
                             <FormGroup>
-                                <Input id="storysubmit"type="textarea"name="story"placeholder="Start your submission here"/>
+                                <Input id="storysubmit"type="textarea"name="story"placeholder="Start your submission here"onChange={this.handleChange}/>
                             </FormGroup>
                         </Form>
                         <Button color="secondary" onClick={this.toggle}>Submit Story</Button>
