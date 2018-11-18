@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import APIURL from '../../helpers/environment';
+import {Table} from 'reactstrap';
 
 class Results extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
-         story:''
+            story:[]
         };
     }
 componentDidMount(){
+    this.fetchResults()
+}
+fetchResults = () => {
     fetch(`${APIURL}/user/read`,{
         method:'GET',
         headers:new Headers({
@@ -16,28 +20,28 @@ componentDidMount(){
         })
     }).then(
         (res)=>res.json()
-    ).then((story)=>{
-        this.setState({story:story})
+    ).then((data)=>{
+        this.setState({story:data.story})
+        console.log(this.state.story)
     })
-    console.log(this.story)
 }
-// fetchResults = () => {
-//     fetch(`${APIURL}/user/read`,{
-//         method:'GET',
-//         headers:new Headers({
-//             'Content-Type':'application/json',
-//         })
-//     }).then(
-//         (res)=>res.json()
-//     ).then((story)=>{
-//         console.log(story)
-//         this.setState({story:story})
-//     })
-// }
     render(){
         return(
             <div>
-                This is there the sample story for the month will go.
+                <h2>The story so far:</h2>
+                <Table>
+                    <tbody>
+                        {
+                            this.state.story.map((story, id)=>{
+                                return(
+                                    <tr key={id}>
+                                        <td>{story.story}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </Table>
             </div>
         )
     }

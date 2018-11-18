@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col, Form, FormGroup, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import {Container, Table, Row, Col, Form, FormGroup, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import './story.css'
 import APIURL from '../../helpers/environment';
 
@@ -7,7 +7,7 @@ class Story extends Component{
     constructor(props){
         super(props)
         this.state={
-                story:'',
+                story:[],
                 modal:false
         }
         this.toggle=this.toggle.bind(this);
@@ -22,7 +22,7 @@ class Story extends Component{
             [event.target.name]:event.target.value
         })
     }
-    componentWillMount(){
+    componentDidMount(){
         this.fetchStory()
         console.log('fetch worked')
     }
@@ -36,8 +36,8 @@ class Story extends Component{
         }).then(
             (res)=>res.json()
         ).then((data)=>{
-            this.setState({story:data})
-            console.log(this.data)
+            this.setState({story:data.story})
+            console.log(this.state.story)
         })
     }
     submitStory = (event) => {
@@ -51,8 +51,7 @@ class Story extends Component{
         }).then(
             (res)=>res.json()
             ).then((data)=>{
-                this.setState({story:data})
-                console.log(data)
+                this.setState({story:data.story})
             })
     }
     render(){
@@ -62,7 +61,23 @@ class Story extends Component{
                 <Row>
                     <Col id="story-divider">
                         <h4>This month's prompt:</h4>
-                        <h6>Savvvy's Propmt</h6>
+                        <h6>For demonstration purposes, all of the entries for this month will be lorem ipsum, 
+                            or random bits of text that I find that I like. In actual production this would be a prompt and 
+                            underneath this prompt would be all the lovely user submissions.
+                        </h6>
+                            <Table>
+                            <tbody>
+                                {
+                                    this.state.story.map((story, id)=>{
+                                        return(
+                                            <tr key={id}>
+                                                <td>{story.story}</td>
+                                           </tr>
+                                        )
+                                  })
+                              }
+                            </tbody>
+                     </Table>
                     </Col>
                     <Col>
                                 <h4>Write your addition to the story:</h4>
