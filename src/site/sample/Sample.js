@@ -26,7 +26,7 @@ const Sample = (props)=>{
                     Whether you submit once or dozens of times, whether your submissions are 250 words or 1000. You submission
                     is part of a friggin book dude!
                 </p>
-                <Link to="/home"><Button>Sign me up!</Button></Link>
+                <Link to="/"><Button>Sign me up!</Button></Link>
                 </Col>
             </Row>
         </Container>

@@ -5,25 +5,35 @@ class Results extends Component{
     constructor(){
         super()
         this.state={
-            storysubmit:{
-            story:''
-            }
+         story:''
         };
     }
-
 componentDidMount(){
-    this.fetchResults()
-}
-
-fetchResults = () =>{
     fetch(`${APIURL}/user/read`,{
         method:'GET',
-        headers: new Headers({
-            'Content-Type':'application/json'
+        headers:new Headers({
+            'Content-Type':'application/json',
         })
+    }).then(
+        (res)=>res.json()
+    ).then((story)=>{
+        this.setState({story:story})
     })
+    console.log(this.story)
 }
-
+// fetchResults = () => {
+//     fetch(`${APIURL}/user/read`,{
+//         method:'GET',
+//         headers:new Headers({
+//             'Content-Type':'application/json',
+//         })
+//     }).then(
+//         (res)=>res.json()
+//     ).then((story)=>{
+//         console.log(story)
+//         this.setState({story:story})
+//     })
+// }
     render(){
         return(
             <div>

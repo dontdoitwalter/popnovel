@@ -17,11 +17,6 @@ class Signup extends Component{
         };
         this.toggle=this.toggle.bind(this);
 }
-
-componentWillMount(){
-    console.log("sign up props: ", this.props)
-}
-
 toggle(){
     this.setState({
         modal:!this.state.modal

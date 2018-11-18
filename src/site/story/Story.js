@@ -22,23 +22,24 @@ class Story extends Component{
             [event.target.name]:event.target.value
         })
     }
-    componentDidMount(){
-        // this.fetchStory()
+    componentWillMount(){
+        this.fetchStory()
+        console.log('fetch worked')
     }
-    // fetchStory = () =>{
-    //     fetch(`${APIURL}/authuser/read`,{
-    //         method:'GET',
-    //         headers:new Headers({
-    //             'Content-Type':'application/json',
-    //             'Authorization':this.props.sessionToken
-    //         })
-    //     }).then(
-    //         (res)=>res.json()
-    //     ).then((story)=>{
-    //         this.setState({story:story})
-    //         console.log(story)
-    //     })
-    // }
+    fetchStory = () =>{
+        fetch(`${APIURL}/user/read`,{
+            method:'GET',
+            headers:new Headers({
+                'Content-Type':'application/json',
+                'Authorization':this.props.sessionToken
+            })
+        }).then(
+            (res)=>res.json()
+        ).then((data)=>{
+            this.setState({story:data})
+            console.log(this.data)
+        })
+    }
     submitStory = (event) => {
         fetch(`${APIURL}/user/story`,{
             method:'POST',
@@ -60,9 +61,11 @@ class Story extends Component{
             <Container id="story-container">
                 <Row>
                     <Col id="story-divider">
-                        <p>This will be where the current story goes.</p>
+                        <h4>This month's prompt:</h4>
+                        <h6>Savvvy's Propmt</h6>
                     </Col>
                     <Col>
+                                <h4>Write your addition to the story:</h4>
                         <Form>
                             <FormGroup>
                                 <Input id="storysubmit"type="textarea"name="story"placeholder="Start your submission here"onChange={this.handleChange}/>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Logo from "../../../src/assets/popnovel.png"
 import "./preview.css"
-import {Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 class Preview extends Component {

@@ -6,7 +6,6 @@ import Preview from '../home/Preview'
 import './home.css'
 
 const Auth = (props)=>{
-    console.log("auth props:", props)
     return(
         <div id="background">
         <Container className="auth-container">
