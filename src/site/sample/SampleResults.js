@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import APIURL from '../../helpers/environment';
 import {Table} from 'reactstrap';
+import './results.css'
+import FreeScrollBar from 'react-free-scrollbar';
 
 class Results extends Component{
     constructor(props){
@@ -27,22 +29,23 @@ fetchResults = () => {
 }
     render(){
         return(
-            <div>
-                <h2>The story so far:</h2>
-                <Table>
+        <div style={{width:'500px', height:'550px', border:'2px solid #567077',background:'#CD88AF'}}>
+            <FreeScrollBar>
+            <Table>
                     <tbody>
                         {
                             this.state.story.map((story, id)=>{
                                 return(
-                                    <tr key={id}>
-                                        <td>{story.story}</td>
-                                    </tr>
+                                    <ul id="results" key={id}>
+                                        <li>{story.story}</li>
+                                    </ul>
                                 )
                             })
                         }
                     </tbody>
                 </Table>
-            </div>
+            </FreeScrollBar>
+        </div>
         )
     }
 }

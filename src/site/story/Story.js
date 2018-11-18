@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Container, Table, Row, Col, Form, FormGroup, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import './story.css'
 import APIURL from '../../helpers/environment';
+import Results from '../sample/SampleResults'
 
 class Story extends Component{
     constructor(props){
@@ -65,31 +66,19 @@ class Story extends Component{
                             or random bits of text that I find that I like. In actual production this would be a prompt and 
                             underneath this prompt would be all the lovely user submissions.
                         </h6>
-                            <Table>
-                            <tbody>
-                                {
-                                    this.state.story.map((story, id)=>{
-                                        return(
-                                            <tr key={id}>
-                                                <td>{story.story}</td>
-                                           </tr>
-                                        )
-                                  })
-                              }
-                            </tbody>
-                     </Table>
+                        <Results />
                     </Col>
                     <Col>
-                                <h4>Write your addition to the story:</h4>
+                        <h4>Write your addition to the story:</h4>
                         <Form>
                             <FormGroup>
                                 <Input id="storysubmit"type="textarea"name="story"placeholder="Start your submission here"onChange={this.handleChange}/>
                             </FormGroup>
                         </Form>
                         <Button color="secondary" onClick={this.toggle}>Submit Story</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Are you sure?</ModalHeader>
-                    <ModalBody>
+                <Modal  isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    <ModalHeader id="storymodal" toggle={this.toggle}>Are you sure?</ModalHeader>
+                    <ModalBody id="storymodal">
                         <Form onSubmit={this.submitStory}>
                             <FormGroup>
                                 <p>
@@ -104,7 +93,7 @@ class Story extends Component{
                             <Button color="primary" type="submit">Submit my part!</Button>
                         </Form>
                    </ModalBody>
-                  <ModalFooter>
+                  <ModalFooter id="storymodal">
                 <Button color="secondary" onClick={this.toggle}>Go Back</Button>
                   </ModalFooter>
                 </Modal>          

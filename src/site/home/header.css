@@ -1,23 +1,23 @@
 #icon{
-    height: 1.5em;
-    width: 1.5em;
+    height: 2em;
+    width: 2em;
 }
 .navigator{
     border-bottom:.4em solid black;
-    background-color:#567077;
+    background-color:#669999;
 }
 .buttons{
     padding-left:.5em;
 }
 #buttonone{
-     background-color:#F55C5C;
+     background-color:#F5AF27;
      color:black;
 }
 #buttontwo{
-    background-color:#F55C5C;
+    background-color:#F5AF27;
     color:black;
 }
 #buttonthree{
-    background-color:#F55C5C;
+    background-color:#F5AF27;
     color:black;
 }

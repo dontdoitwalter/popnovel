@@ -1,12 +1,12 @@
 #story-container{
-    background:#F55C5C;
+    background:#A5C663;
     border: .4em solid #567077;
     border-radius: .4em;
     box-shadow: 2  #f0f0f0;
     padding:2em;
 }
 #story-background{
-    background:#550000;
+    background:#D46A6A;
     padding:6em;
 }
 #story-divider{
@@ -14,4 +14,9 @@
 }
 #storysubmit{
     height:35em;
+    background:#CD88AF;
+    color:black;
+}
+#storymodal{
+    background-color:#9FC6E3
 }

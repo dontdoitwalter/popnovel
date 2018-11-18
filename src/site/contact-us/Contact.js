@@ -9,9 +9,9 @@ const Contact = () =>{
     <Row id="top-divide">
         <Col id="contact-divider-right">
     <h1>Contact Us!</h1>
-    <h6>Feedback is important to us! If you find any bugs we would LOVE to know so that we
-        can fix them. In addition, if you have any suggestions for quality of life imporvements
-        let us know. This application is for you the user, so we want it to be the best experience possible.
+    <h6>Feedback is important to us! If you find any bugs, we would LOVE to know so that we
+        can fix them. In addition, if you have any suggestions for quality of life improvements,
+        let us know. This application is for you, the user, so we want it to be the best experience possible.
     </h6>
 
     </Col>

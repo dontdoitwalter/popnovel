@@ -36,7 +36,7 @@ class Suggest extends Component{
                     <Container className="suggest-container">
                         <Row>
                             <Col>
-                            <h3>If you would like to suggest either a future prompt or genre, enter is in the field below!</h3>
+                            <h3>If you would like to suggest either a future prompt or genre, enter it in the field below!</h3>
                                 <Form onSubmit={this.makeSuggestion}>
                                     <FormGroup>
                                         <Input id="suggest"type="textarea"name="suggest"placeholder="Suggest Away!!"onChange={this.handleChange}/>

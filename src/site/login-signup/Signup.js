@@ -53,8 +53,8 @@ render(){
                 <h3>Open Source</h3>
                     <h6>
                         All of the user content produced from this application will be considered open source.
-                        This means, that you as a user can use any of the content found here, in your own work
-                        outside of the application, and vice versa. 
+                        This means that you, as the user, can use any of the content found here, in your own work
+                        outside of the application.
                     </h6>
                 <h3>Site Rules</h3>
                     <h6>

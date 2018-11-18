@@ -7,7 +7,7 @@ import './home.css'
 
 const Auth = (props)=>{
     return(
-        <div id="background">
+        <div id="home-background">
         <Container className="auth-container">
             <Row>
                 <Col className="homeLeft">

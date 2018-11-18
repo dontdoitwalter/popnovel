@@ -95,8 +95,8 @@ render(){
         </div>
             <Button color="secondary" onClick={this.toggle}>Update Profile</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Update Profile Info</ModalHeader>
-                    <ModalBody>
+                    <ModalHeader id="profilemodal" toggle={this.toggle}>Update Profile Info</ModalHeader>
+                    <ModalBody id="profilemodal">
                         <Form onSubmit={this.handleUpdate}>
                             <FormGroup>
                                 <Input id="up_displayname"type="text"name="displayname"placeholder="Update Display Name"onChange={this.handleChange}/>
@@ -119,16 +119,16 @@ render(){
                             <Button color="primary" type="submit">Save Changes</Button>
                         </Form>
                    </ModalBody>
-                  <ModalFooter>
+                  <ModalFooter id="profilemodal">
                 <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>          
           </Col>
           <Col className="prof-left">
             <h2>About Me:</h2><br/>{this.state.user.aboutme}<hr/>
-            <Link to="/story"><Button id="prof-button-one">Create!</Button></Link>
-            <Link to='/suggest'><Button id="prof-button-two">Suggest a Prompt!</Button></Link>
             <Form onSubmit={this.handleDelete}>
+                <Link to="/story"><Button id="prof-button-one">Create!</Button></Link>
+                <Link to='/suggest'><Button id="prof-button-two">Suggest a Prompt!</Button></Link>
                 <Button type="submit">Delete My Account</Button>
             </Form>
           </Col>
