@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import APIURL from '../../helpers/environment';
+import '/signup.css'
 
 class Signup extends Component{
     constructor(props){
@@ -69,8 +70,8 @@ render(){
                         </ul>
             <Button color="secondary" onClick={this.toggle}>I Accept!</Button>       
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <ModalHeader toggle={this.toggle}>Create Your Profile</ModalHeader>
-                    <ModalBody>
+                <ModalHeader id="signupmodal"toggle={this.toggle}>Create Your Profile</ModalHeader>
+                    <ModalBody id="signupmodal">
                         <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
                                 <Label for="displayname">Display Name</Label>
@@ -102,7 +103,7 @@ render(){
                             </FormGroup>
                         </Form>                        
                    </ModalBody>
-                        <ModalFooter>
+                        <ModalFooter id="signupmodal">
                             <Button color="primary" onClick={this.handleSubmit}>Create My Profile</Button>
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
