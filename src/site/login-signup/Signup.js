@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import APIURL from '../../helpers/environment';
-import '/signup.css'
+import './signup.css'
 
 class Signup extends Component{
     constructor(props){
